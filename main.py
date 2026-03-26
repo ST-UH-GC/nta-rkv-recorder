@@ -32,9 +32,9 @@ def health():
     return JSONResponse({"vehicles": len(vehicles)})
 
 
-@app.get("/tuesday.jsonl")
-def tuesday():
-    path = os.path.join(RECORD_DIR, "tuesday.jsonl")
+@app.get("/wednesday.jsonl")
+def wednesday():
+    path = os.path.join(RECORD_DIR, "wednesday.jsonl")
     if not os.path.exists(path):
         return JSONResponse({"error": "no recording yet"}, status_code=404)
     return FileResponse(path, media_type="application/x-ndjson")
